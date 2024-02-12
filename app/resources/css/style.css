@@ -26,6 +26,7 @@ html {
 
 .image-container img {
   display: block;
+  max-width: 100%;
 }
 
 @media only screen and (max-width: 760px) {
@@ -38,9 +39,12 @@ html {
 
 header {
   position: fixed;
+  top: 0;
+  z-index: 10;
   width: 100%;
   border-bottom: solid 1px #c6c1c1;
   background-color: white;
+  /* min-height: 10%; */
 }
 
 header .content {
@@ -118,6 +122,10 @@ header .mobile {
   justify-content: flex-start;
   align-items: flex-start;
   height: 43.5rem;
+  background-image: url('https://static-assets.codecademy.com/Paths/full-stack-career-journey/Fotomatic/final/resources/images/banner-landingpage.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 
 #sign-up-cta {
@@ -125,6 +133,8 @@ header .mobile {
   border: solid 1px #979797;
   border-radius: 4px;
   background-color: #9dc20b;
+  margin-left: 100px;
+  margin-top: 170px;
 }
 
 #sign-up-cta .content {
@@ -175,6 +185,7 @@ header .mobile {
     height: auto;
     background-color: transparent;
     border: none;
+    margin: 0 auto;
   }
 
   #sign-up-cta .content {
@@ -194,7 +205,7 @@ header .mobile {
   }
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 500px) {
   #sign-up-section {
     height: 20rem;
   }
@@ -235,6 +246,7 @@ header .mobile {
   font-size: 2.25rem;
   font-weight: bold;
   color: #4a4a4a;
+  margin-top: 2.5rem;
 }
 
 .feature h3 {
@@ -242,13 +254,26 @@ header .mobile {
   line-height: 1.2;
   font-weight: 300;
   color: #4a4a4a;
+  margin-bottom: 2rem;
 }
 
 @media only screen and (max-width: 890px) {
+  #features-section {
+    padding: 1rem 0;
+  }
+
+  .feature {
+    padding-bottom: 0;
+  }
+
+  .feature .content {
+    text-align: left;
+  }
+
   .feature h2 {
-    font-size: 1.125rem;
+    font-size: 1.75rem;
     line-height: 1.3;
-    font-weight: normal;
+    font-weight: bold;
   }
 
   .feature h3 {
@@ -269,22 +294,37 @@ header .mobile {
   }
 }
 
+@media only screen and (max-width: 500px) {
+  .feature h2 {
+    font-weight: normal;
+  }
+
+  .feature .content {
+    text-align: center;
+  }
+}
+
 /* Filters Section */
 
 #filters-section {
   padding: 4rem 0;
   background-color: #4a4a4a;
+  padding-bottom: 0;
 }
 
 #filters-section .content {
   padding: 0 .625rem;
   margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #filters-section .content h2 {
   font-size: 2.25rem;
   font-weight: bold;
   color: white;
+  line-height: 3rem ;
 }
 
 #filters-section .content h3 {
@@ -297,7 +337,10 @@ header .mobile {
 #filters-section .images-container {
   max-width: 100%;
   padding: 0 1%;
+  display: flex;
 }
+
+
 
 @media only screen and (max-width: 760px) {
   #filters-section {
@@ -305,7 +348,7 @@ header .mobile {
   }
 
   #filters-section .content {
-    margin-bottom: 1rem;
+    margin-bottom: 0;
   }
 
   #filters-section .content h2 {
@@ -329,19 +372,29 @@ header .mobile {
   }
 }
 
+@media only screen and (max-width: 500px){
+  #filters-section {
+    padding: 0;
+  }
+  #filters-section .content {
+    padding: 2rem;
+  }
+}
+
 /* Quotes Section */
 
 #quotes-section {
   background-color: #f3f3f3;
+  padding: 5rem 0;
 }
 
 #quotes-section content {
   padding: 5rem 0;
 }
 
-#quotes-section quote {
+#quotes-section .quote {
   padding-right: 1.875rem;
-  font-family: "Palatino", serif;
+  font-family: "Palatino", "Palatino Linotype", serif;
   font-size: 1.875rem;
   line-height: 1.1;
   font-style: italic;
@@ -352,9 +405,24 @@ header .mobile {
   height: 1.875rem;
 }
 
+@media only screen and (max-width: 890px){
+  #quotes-section .content.center{
+    display: flex;
+    margin: 0 1rem;
+  }
+
+  #quotes-section img {
+    object-fit: contain;
+
+  }
+}
+
 @media only screen and (max-width: 760px) {
+
+  
   #quotes-section content {
-    padding: 1.875rem .625rem;
+    padding: 1.875rem .625rem 1000px;
+    display: flex;
   }
 
   #quotes-section quote {
@@ -369,6 +437,18 @@ header .mobile {
   }
 }
 
+@media only screen and (max-width: 500px) {
+  #quotes-section .content {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem
+  }
+
+  #quotes-section img {
+    width: 30%;
+  }
+}
+
 /* Footer */
 
 footer {
@@ -379,11 +459,15 @@ footer {
 footer .content {
   color: white;
   display: flex;
-  font-size: .75rem;
 }
 
 footer .copyright {
   flex-grow: 1;
+  font-size: .75rem;
+}
+
+footer .location {
+  font-size: .75rem;
 }
 
 @media only screen and (min-width: 760px) {
